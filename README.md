@@ -15,4 +15,4 @@ My goal:  to put into practice some of Vue options : <br>
 - the "Provide / Inject" option<br>
 - the use of pattern and approach of reusable component with "slot" <br>
 - of course what Vue is all about: breaking code into components!<br>
-The way I made the app sticks to this goal. 
+<br>The way I made the app sticks to this goal. 
