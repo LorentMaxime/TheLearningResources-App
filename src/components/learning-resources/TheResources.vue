@@ -1,0 +1,3 @@
+<template>
+    The resources
+</template>
