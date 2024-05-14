@@ -1,6 +1,6 @@
 <template>
     <!-- with the mode prop, idea is to use this base-button with the mode='flat' later, which is link to a css class for an alternative look -->
-    <button :type="type" :class="mode"> 
+    <button :class="mode"> 
         <!-- with slot instead of a {{ text }} here, idea is to give the dev maximum flexibility: add a text but more: svg icon, any markup ... -->
         <slot></slot>
     </button>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        props: ['type', 'mode']
+        props: ['mode']
     }
 </script>
 
