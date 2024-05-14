@@ -10,6 +10,6 @@ will create a node_modules folder which is missing otherwise (it's not in the at
 
 ## What is the purpose of it ?
 In fact, this a dummy simple Vue3 app I made to train myself on Vue3 specifics options. 
-I wanted an app with two tabs, a form to add new resources, a button to delete a resource, a header.
-Here, I wanted to put into practice the "Provide / Inject" option + the manipulation of "slot" + of course what Vue is all about: breaking code into components.
-The way I made it sticks to it. 
+I wanted an app with two tabs, a form to add new resources, a button to delete a resource, a header. No DB, just cached in browser memory.
+To put it in a nutshell, I wanted to put into practice some of Vue options : the "Provide / Inject" option + the manipulation of "slot" + of course what Vue is all about: breaking code into components.
+The way I made the app sticks to this goal. 
