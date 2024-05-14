@@ -1,4 +1,15 @@
 <template>
+    <base-dialog v-if="inputIsInvalid" title="Invalid Input" @closeDialog="closeBaseDialog">
+        <!-- here is the slot in section, with no name so default -->
+        <template #default>
+            <p>There is an empty field somewhere!</p>
+            <p>Please enter something in each input of the form</p>
+        </template>
+        <!-- here is the slot named 'actions' -->
+        <template #actions>
+            <base-button @click="closeBaseDialog">Okay</base-button>
+        </template>    
+    </base-dialog>
     <base-card>
         <form @submit.prevent="submitData()">
             <div class="form-control">
@@ -25,7 +36,7 @@ export default {
     inject: ['addResource'],
     data() {
         return {
-            modal: false,
+            inputIsInvalid: false,
         }
     },
     methods: {
@@ -35,10 +46,14 @@ export default {
             const enteredUrl = this.$refs.linkInput.value;
 
             if(enteredTitle.trim() === '' || enteredDesc.trim() === '' || enteredUrl.trim() === ''){
-                this.modal === true
+                this.inputIsInvalid = true
+                return;
             }
 
             this.addResource(enteredTitle, enteredDesc, enteredUrl);
+        },
+        closeBaseDialog() {
+            this.inputIsInvalid = false;
         }
     }
 }
