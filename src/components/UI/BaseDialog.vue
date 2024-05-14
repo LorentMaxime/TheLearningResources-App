@@ -1,24 +1,27 @@
+<!-- I made this dialog modal highly flexible and reusable, 
+thus I don't need to in this app since this modal is only used in one place -->
 <template>
-    <!-- I made this dialog modal highly flexible and reusable, 
-    thus I don't need to in this app since this modal is only used in one place -->
-    <div @click="$emit('closeDialog')"></div>
-    <dialog open>
-        <header>
-            <!-- I use a slot to allow the dev to put his own content,
-            but I add more flexibility by adding a default title in case slot is not used -->
-            <slot name="header">
-                <h2>{{ title }}</h2>
-            </slot>
-        </header>
-        <section>
-            <slot></slot>
-        </section>
-        <menu>
-            <slot name="actions">
-                <base-button @click="$emit('closeDialog')">Close</base-button>
-            </slot>
-        </menu>
-    </dialog>
+    <!-- tells where this should move to the DOM, to avoid it to be nested deep in the HTML structure... why not!-->
+    <teleport to="body"> 
+        <div @click="$emit('closeDialog')"></div>
+        <dialog open>
+            <header>
+                <!-- I use a slot to allow the dev to put his own content,
+                but I add more flexibility by adding a default title in case slot is not used -->
+                <slot name="header">
+                    <h2>{{ title }}</h2>
+                </slot>
+            </header>
+            <section>
+                <slot></slot>
+            </section>
+            <menu>
+                <slot name="actions">
+                    <base-button @click="$emit('closeDialog')">Close</base-button>
+                </slot>
+            </menu>
+        </dialog>
+    </teleport>
 </template>
 
 <script>

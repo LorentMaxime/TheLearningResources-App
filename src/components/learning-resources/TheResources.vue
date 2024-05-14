@@ -48,7 +48,8 @@ export default {
     provide(){
         return {
            resources : this.storedResources,
-           addResource: this.addResource
+           addResource: this.addResource,
+           deleteResource: this.removeResource
         };
     },
     methods: {
@@ -64,6 +65,11 @@ export default {
         };
         this.storedResources.unshift(newResource);
         this.selectedTab = 'stored-resources';
+      },
+      removeResource(id) {
+        // I use this way to delete, in another case (with filter) I was deleting a resource from a duplicated array, not the orignal one
+        const resIndex = this.storedResources.findIndex(res => res.id === id);
+        this.storedResources.splice(resIndex, 1);
       }
     }
 }    
