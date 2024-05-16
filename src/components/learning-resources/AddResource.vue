@@ -1,6 +1,6 @@
 <template>
     <base-dialog v-if="inputIsInvalid" title="Invalid Input" @closeDialog="closeBaseDialog">
-        <!-- here is the slot in section, with no name so default -->
+        <!-- here is the slot into section tag, with no name so default -->
         <template #default>
             <p>There is an empty field somewhere!</p>
             <p>Please enter something in each input of the form</p>
@@ -36,7 +36,7 @@ export default {
     inject: ['addResource'],
     data() {
         return {
-            inputIsInvalid: false,
+            inputIsInvalid: false, //error handling
         }
     },
     methods: {

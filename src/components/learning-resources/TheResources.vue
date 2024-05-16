@@ -1,5 +1,6 @@
 <template>
     <base-card>
+    <!-- UX: these are the two tabs, the user can switch between the both -->
         <base-button @click="setSelectedTab('stored-resources')" :mode="storedResButtonMode">Stored Resources</base-button>
         <base-button @click="setSelectedTab('add-resource')" :mode="addResButtonMode">Add Resource</base-button>
     </base-card>
@@ -20,7 +21,7 @@ export default {
     },
     data(){
         return {
-            selectedTab: 'stored-resources',
+            selectedTab: 'stored-resources', // this is not a string, it refers to a component key name us in the DOM, with the <component> tag
             storedResources: [
                 {
                     id: 'official-guide',
@@ -38,6 +39,7 @@ export default {
         };
     },
     computed: {
+        // this computed property's modifying the style of the base-button: highlight the choice the user made when clicking on one tab
         storedResButtonMode() {
             return this.selectedTab ==='stored-resources' ? null : 'flat'
         },
@@ -53,6 +55,7 @@ export default {
         };
     },
     methods: {
+        // make the switch between tabs
       setSelectedTab(tab) {
         this.selectedTab = tab;
       },
@@ -67,7 +70,7 @@ export default {
         this.selectedTab = 'stored-resources';
       },
       removeResource(id) {
-        // I use this way to delete, in another case (with filter) I was deleting a resource from a duplicated array, not the orignal one
+        // I use this way to delete, in another case (with .filter()) I was deleting a resource from a duplicated array, not the orignal one
         const resIndex = this.storedResources.findIndex(res => res.id === id);
         this.storedResources.splice(resIndex, 1);
       }

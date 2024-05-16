@@ -1,5 +1,5 @@
 <!-- I made this dialog modal highly flexible and reusable, 
-thus I don't need to in this app since this modal is only used in one place -->
+thus I don't need it in this app since this modal is only used in one place -->
 <template>
     <!-- tells where this should move to the DOM, to avoid it to be nested deep in the HTML structure... why not!-->
     <teleport to="body"> 

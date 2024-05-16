@@ -1,16 +1,16 @@
 <template>
     <ul>
-        <learning-resource v-for="res in resources" :key="res.id" :id="res.id" :title="res.title" :description="res.description" :link="res.link"></learning-resource>
+        <learning-resources v-for="res in resources" :key="res.id" :id="res.id" :title="res.title" :description="res.description" :link="res.link" />
     </ul>
 </template>
 
 <script>
-import LearningResource from './LearningResource.vue';
+import LearningResources from './LearningResources.vue';
 
 export default {
     inject: ['resources'],
     components: {
-        LearningResource
+        LearningResources
     }
 }
 </script>
