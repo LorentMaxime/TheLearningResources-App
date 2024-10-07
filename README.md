@@ -1,5 +1,5 @@
 # TheLearningResources-App
-A simple app to store learning resources
+A dummy simple app to store learning resources I made to train myself on Vue3 specifics options. 
 
 ## How to use it ?
 If you want to run my code, you need to follow these steps:
